@@ -14,5 +14,5 @@
 <nav>
     <Link to="/">Home</Link>
     <Link to="Sobre">About</Link>
-    <Link to="Jogos">Blog</Link>
+    <Link to="Jogos">Jogos</Link>
 </nav>
