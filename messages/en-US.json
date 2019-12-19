@@ -15,7 +15,31 @@
 				"buraco": {
 					"title": "Buraco Ingles",
 					"description": "Best website to play Buraco Free Online Games with thousands of players from all around the world "
+				},
+				"tranca": {
+					"title": "Tranca Ingles",
+					"description": "Best website to play Tranca Free Online Games with thousands of players from all around the world."
+				},
+				"truco": {
+					"title": "Truco Ingles",
+					"description": "Best website to play Truco Free Online Games with thousands of players from all around the world."
 				}
+			}
+		},
+		"regras": {
+			"jogo": {
+			"buraco": {
+					"title": "Game rules Buraco",
+					"description": "<h2>Descriptions</h2> <p>The game is played with 4 participants, forming duos, sitting in alternate positions on the table.</p>"
+				},
+				"tranca": {
+					"title": "Game rules Tranca",
+					"description": "<h2>Descriptions</h2> <p>The game is played with 4 participants, forming duos, sitting in alternate positions on the table.</p>"
+				},
+				"truco": {
+					"title": "Game rules Truco",
+					"description": "<h2>Descriptions</h2> <p>The game is played with 4 participants, forming duos, sitting in alternate positions on the table.</p>"
+				}	
 			}
 		},
 		"ranking": {
@@ -25,6 +49,10 @@
 			"buraco": "buraco-ingles",
 			"tranca": "tranca-ingles",
 			"truco": "truco-ingles"
+		},
+		"buttons": {
+			"play": "Play",
+			"rules": "Rules"
 		}
 	}
 }

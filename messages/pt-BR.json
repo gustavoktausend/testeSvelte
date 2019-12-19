@@ -15,7 +15,31 @@
 				"buraco": {
 					"title": "Buraco Portugues",
 					"description": "Melhor site para você jogar Buraco - Canastra Online grátis com milhares de pessoas do Brasil e do mundo."
+				},
+				"tranca": {
+					"title": "Tranca Portugues",
+					"description": "Melhor site para você jogar Tranca Online grátis com milhares de pessoas do Brasil e do mundo."
+				},
+				"truco": {
+					"title": "Truco Portugues",
+					"description": "Truco MegaJogosJogue Truco Online grátis no MegaJogos e divirta-se em um dos Jogos de Cartas mais populares no Brasil. Esse jogo também é conhecido como Truco Paulista."
 				}
+			}
+		},
+		"regras": {
+			"jogo": {
+			"buraco": {
+					"title": "Regras do Jogo Buraco (Canastra)  ",
+					"description": "<h2>Descrição</h2> <p>O jogo é jogado com quatro participantes, formando duas duplas, devendo estar sentadas na mesa em posições alternadas.</p>"
+				},
+				"tranca": {
+					"title": "Regras do Jogo Tranca",
+					"description": "<h2>Descrição</h2> <p>O jogo é jogado com 4 participantes formando duas duplas situadas em posições alternadas.</p>"
+				},
+				"truco": {
+					"title": "Regras do Jogo Truco",
+					"description": "<h2>Descrição</h2> <p>O jogo tem quatro participantes, que formam duas duplas, devendo sentar em posições alternadas.</p>"
+				}	
 			}
 		},
 		"ranking": {
@@ -25,6 +49,10 @@
 			"buraco": "buraco-portugues",
 			"tranca": "tranca-portugues",
 			"truco": "truco-portugues"
+		},
+		"buttons": {
+			"play": "Jogar",
+			"rules": "Regras"
 		}
 	}
 }

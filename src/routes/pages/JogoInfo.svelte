@@ -84,8 +84,8 @@
         </div>
 
         <div style="margin: 10px 0;">
-            <a class="button-mj" href="/jogar">Jogar</a>
-            <a class="button-mj" href="/jogos/{jogo.url}/regras" style="margin-left: 20px;">Regras</a>
+            <a class="button-mj" href="/jogar">{$_(`page.buttons.play`)}</a>
+            <a class="button-mj" href="/jogos/{jogo.url}/regras" style="margin-left: 20px;">{$_(`page.buttons.rules`)}</a>
         </div>
 
     </div>

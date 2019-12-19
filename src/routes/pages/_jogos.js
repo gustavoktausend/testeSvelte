@@ -1,5 +1,4 @@
 
-// fazer aqui a consulta para a API (strapi) para retornar os jogos com as props 
 
 const jogos = [
     {   
