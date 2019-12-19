@@ -1,0 +1,22 @@
+{
+	"page": {
+		"title": {
+			"index": "GameVelvet"
+		},
+		"nav": {
+			"home": "Home",
+			"about": "About",
+			"blog": "Blog",
+			"games": "Games"
+		},
+		"jogos": {
+			"title": "Games"
+		},
+		"ranking": {
+			"title": "Last Champions"
+		},
+		"url": {
+			"buraco": "buraco-ingles"
+		}
+	}
+}

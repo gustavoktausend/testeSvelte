@@ -1,0 +1,22 @@
+{
+	"page": {
+		"title": {
+			"index": "MegaJogos"
+		},
+		"nav": {
+			"home": "Inicio",
+			"about": "Sobre",
+			"blog": "Blog",
+			"games": "Jogos"
+		},
+		"jogos": {
+			"title": "Jogos"
+		},
+		"ranking": {
+			"title": "Últimos Campeões"
+		},
+		"url_mapping": {
+			"buraco": "buraco-portugues"
+		}
+	}
+}
