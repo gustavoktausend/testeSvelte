@@ -1,6 +1,5 @@
 <script context="module">
     import jogos from './_jogos.js';
-    console.log(jogos)
 </script>
 
 <script>

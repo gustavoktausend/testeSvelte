@@ -5,7 +5,7 @@
     import Sobre from "./pages/Sobre.svelte";
 </script>
 
-<div>
+<div class="container-fluid">
     <Route path="Jogos" component="{Jogos}" />
     <Route path="Sobre" component="{Sobre}" />
     <Route path="/" component="{Home}" />

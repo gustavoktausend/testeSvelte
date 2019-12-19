@@ -8,6 +8,8 @@
         font-weight: 300;
         padding: 0 1em;
         background: linear-gradient(135deg, #009dd6 0%,#00cfea 100%);
+        height: 48px;
+
     }
 </style>
 
