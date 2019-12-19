@@ -1,5 +1,6 @@
 <script>
     export let jogo;
+    import { Link } from "svelte-routing";
     async function getCountOnline() {
         const res = await fetch(`https://www.megajogos.com.br/ajax/site_counter.jsp?1576186596292`);
         return await res.json();
@@ -55,7 +56,7 @@
             <img class="game-logo" src="{jogo.imagem}" alt="{jogo.nome}">
         </div>
         <div class="card-footer">
-            <a rel="prefetch" href="/jogos/{jogo.url}">{jogo.nome}</a>
+            <Link to="/Jogos/{jogo.url}" state={jogo} >aqui</Link>
         </div>
     </div>
 </div>
