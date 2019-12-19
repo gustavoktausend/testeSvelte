@@ -1,5 +1,5 @@
 <script>
-    import { Link } from "svelte-routing";
+    import { link } from "svelte-routing";
     import { _ } from 'svelte-i18n'
 
 </script>
@@ -46,6 +46,12 @@
 		bottom: -1px;
 	}
 
+
+	.logo {
+		float: left;
+		padding: 8px 0 8px 0;
+	}
+
 	a {
 		text-decoration: none;
 		padding: 1em 0.5em;
@@ -53,28 +59,20 @@
 		color: #f0f0f0;
 		font-weight: bold;
 	}
-
-	.logo {
-		float: left;
-		padding: 8px 0 8px 0;
-	}
 </style>
 
 <nav>
-<!--    <img src="https://cdn.megajogos.com.br/images/logo_top_01_pt_BR.png" alt="MegaJogos" title="MegaJogos">-->
-<!--    <Link to="/">Home</Link>-->
-<!--    <Link to="Sobre">About</Link>-->
-<!--    <Link to="Jogos">Jogos</Link>-->
     <div class="container" style="padding: 0;">
 		<div class="logo">
 			<img src="https://cdn.megajogos.com.br/images/logo_top_01_pt_BR.png" alt="logo ">
 		</div>
 		<ul>
-			<li><Link to="/">{$_('page.nav.home')}</Link></li>
-			<!--<li><a class:selected='{segment === "about"}' href='about'>about</a></li>-->
-			<li><Link to="sobre">{$_('page.nav.about')}</Link> </li>
-			<li><Link to="jogos">{$_('page.nav.games')}</Link></li>
-
+<!--			<li><Link to="/">{$_('page.nav.home')}</Link></li>-->
+<!--			<li><Link to="sobre">{$_('page.nav.about')}</Link> </li>-->
+<!--			<li><Link to="jogos">{$_('page.nav.games')}</Link></li>-->
+			<li><a href="/" use:link>{$_('page.nav.home')}</a> </li>
+			<li><a href="sobre" use:link>{$_('page.nav.about')}</a> </li>
+			<li><a href="/jogos" use:link>{$_('page.nav.games')}</a> </li>
 			<!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
 				the blog data when we hover over the link or tap it on a touchscreen -->
 		</ul>
