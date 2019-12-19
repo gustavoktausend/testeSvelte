@@ -2,6 +2,7 @@
     export let nome;
     export let location;
     export let jogo = location.state;
+    import { Link } from "svelte-routing";
     import { _ } from 'svelte-i18n'
 </script>
 
@@ -85,7 +86,9 @@
 
         <div style="margin: 10px 0;">
             <a class="button-mj" href="/jogar">{$_(`page.buttons.play`)}</a>
-            <a class="button-mj" href="/jogos/{jogo.url}/regras" style="margin-left: 20px;">{$_(`page.buttons.rules`)}</a>
+            <div class="button-mj" style="margin-left: 20px;">
+                <Link to="jogo/{$_(`page.url.${jogo.url}`)}/regras" state={jogo} >{$_(`page.buttons.rules`)}</Link>
+            </div>
         </div>
 
     </div>
