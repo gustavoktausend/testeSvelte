@@ -13,7 +13,7 @@ import { init } from 'svelte-i18n';
 init({
 	fallbackLocale: 'en-US',
 	initialLocale: {
-    navigator: true, // i.e 'en-US'
+		navigator: true, // i.e 'en-US'
 	},
 });
 

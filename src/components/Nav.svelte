@@ -2,7 +2,6 @@
     import { Link } from "svelte-routing";
     import { _ } from 'svelte-i18n'
 
-    export let segment;
 </script>
 
 <style>
@@ -31,7 +30,6 @@
 		display: block;
 		float: right;
 	}
->>>>>>> ee413ff05c7862daa30cc3d340fea6a54387597c
 
 	.selected {
 		position: relative;
@@ -72,10 +70,10 @@
 			<img src="https://cdn.megajogos.com.br/images/logo_top_01_pt_BR.png" alt="logo ">
 		</div>
 		<ul>
-			<li><Link class:selected='{segment === undefined}' to="/">{$_('page.nav.home')}</Link></li>
+			<li><Link to="/">{$_('page.nav.home')}</Link></li>
 			<!--<li><a class:selected='{segment === "about"}' href='about'>about</a></li>-->
-			<li><Link class:selected='{segment === undefined}' to="Sobre">{$_('page.nav.about')}</Link> </li>
-			<li><Link class:selected='{segment === undefined}' to="Jogos">{$_('page.nav.games')}</Link></li>
+			<li><Link to="sobre">{$_('page.nav.about')}</Link> </li>
+			<li><Link to="jogos">{$_('page.nav.games')}</Link></li>
 
 			<!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
 				the blog data when we hover over the link or tap it on a touchscreen -->

@@ -14,27 +14,29 @@
     <meta name="keywords" content="jogos, cartas, tabuleiro">
     <meta name="author" content="Gustavo Kring">
 </svelte:head>
-
-<div class="row">
-    <div class="col">
-        <h2 style="margin-top: 20px;">{$_('page.jogos.title')}</h2>
-    </div>
-</div>
-<br>
-<div class="row">
-    <div class="col-md-8">
-        <div class="row">
-            {#each jogos as jogo, i}
-                <Jogo {jogo} />
-            {/each}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 style="margin-top: 20px;">{$_('page.jogos.title')}</h2>
         </div>
     </div>
-</div>
-
-<div class="row">
-    <div class="col-md-12">
-        <Locales /> 
+    <br>
+    <div class="row">
+        <div class="col-md-10">
+            <div class="row">
+                {#each jogos as jogo, i}
+                    <Jogo {jogo} />
+                {/each}
+            </div>
+        </div>
     </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <Locales />
+        </div>
+    </div>
+
 </div>
 
 

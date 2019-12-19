@@ -4,11 +4,17 @@
     import Jogos from "./pages/Jogos.svelte";
     import Sobre from "./pages/Sobre.svelte";
     import JogosInfo from "./pages/JogoInfo.svelte";
+    import { _ } from 'svelte-i18n';
+
+
+
 </script>
 
 <div class="container-fluid">
-    <Route path="Jogos" component="{Jogos}" />
-    <Route path="Jogos/:nome" component="{JogosInfo}"  />
-    <Route path="Sobre" component="{Sobre}" />
+    <Route path="jogos" component="{Jogos}" />
+    <Route path=":nome" component="{JogosInfo}"  />
+    <Route path="sobre" component="{Sobre}" />
     <Route path="/" component="{Home}" />
 </div>
+<!--    {$_('page.jogos.title')}-->
+<!--to="/{$_(`page.url.${jogo.nome}`)}"-->

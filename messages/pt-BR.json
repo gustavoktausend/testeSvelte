@@ -10,13 +10,21 @@
 			"games": "Jogos"
 		},
 		"jogos": {
-			"title": "Jogos"
+			"title": "Jogos",
+			"jogo": {
+				"buraco": {
+					"title": "Buraco Portugues",
+					"description": "Melhor site para você jogar Buraco - Canastra Online grátis com milhares de pessoas do Brasil e do mundo."
+				}
+			}
 		},
 		"ranking": {
 			"title": "Últimos Campeões"
 		},
-		"url_mapping": {
-			"buraco": "buraco-portugues"
+		"url": {
+			"buraco": "buraco-portugues",
+			"tranca": "tranca-portugues",
+			"truco": "truco-portugues"
 		}
 	}
 }

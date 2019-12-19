@@ -2,6 +2,7 @@
     export let nome;
     export let location;
     export let jogo = location.state;
+    import { _ } from 'svelte-i18n'
 </script>
 
 <style>
@@ -64,8 +65,8 @@
 </style>
 
 <svelte:head>
-    <title>{jogo.page_title}</title>
-    <meta name="description" content="{jogo.description}">
+    <title>{$_(`page.jogos.jogo.${jogo.url}.title`)}</title>
+    <meta name="description" content="{$_(`page.jogos.jogo.${jogo.url}.description`)}">
     <meta name="keywords" content="jogos, cartas, tabuleiro">
     <meta name="author" content="Gustavo Kring">
 </svelte:head>
@@ -76,10 +77,10 @@
         <img src="{jogo.imagem}" alt="{jogo.nome}">
     </div>
     <div class="col-md-9">
-        <h1>{jogo.nome}</h1>
+        <h1>{$_(`page.jogos.jogo.${jogo.url}.title`)}</h1>
 
         <div class='content'>
-            {@html jogo.description}
+            {@html $_(`page.jogos.jogo.${jogo.url}.description`)}
         </div>
 
         <div style="margin: 10px 0;">

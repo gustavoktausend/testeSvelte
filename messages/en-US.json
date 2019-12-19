@@ -10,13 +10,21 @@
 			"games": "Games"
 		},
 		"jogos": {
-			"title": "Games"
+			"title": "Games",
+			"jogo": {
+				"buraco": {
+					"title": "Buraco Ingles",
+					"description": "Best website to play Buraco Free Online Games with thousands of players from all around the world "
+				}
+			}
 		},
 		"ranking": {
 			"title": "Last Champions"
 		},
 		"url": {
-			"buraco": "buraco-ingles"
+			"buraco": "buraco-ingles",
+			"tranca": "tranca-ingles",
+			"truco": "truco-ingles"
 		}
 	}
 }
