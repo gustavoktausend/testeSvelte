@@ -73,23 +73,24 @@
 </svelte:head>
 
 
-<div class="row" style="margin: 40px 0">
-    <div class="col-md-3">
-        <img src="{jogo.imagem}" alt="{jogo.nome}">
-    </div>
-    <div class="col-md-9">
-        <h1>{$_(`page.jogos.jogo.${jogo.url}.title`)}</h1>
-
-        <div class='content'>
-            {@html $_(`page.jogos.jogo.${jogo.url}.description`)}
+<div class="container">
+    <div class="row" style="margin: 40px 0">
+        <div class="col-md-3">
+            <img class="img-responsive" src="{jogo.imagem}" alt="{jogo.nome}">
         </div>
+        <div class="col-md-9">
+            <h1>{$_(`page.jogos.jogo.${jogo.url}.title`)}</h1>
 
-        <div style="margin: 10px 0;">
-            <a class="button-mj" href="/jogar">{$_(`page.buttons.play`)}</a>
-            <div class="button-mj" style="margin-left: 20px;">
-                <Link to="jogo/{$_(`page.url.${jogo.url}`)}/regras" state={jogo} >{$_(`page.buttons.rules`)}</Link>
+            <div class='content'>
+                {@html $_(`page.jogos.jogo.${jogo.url}.description`)}
+            </div>
+
+            <div style="margin: 20px 0;">
+                <a class="button-mj" href="/jogar">{$_(`page.buttons.play`)}</a>
+                <div class="button-mj" style="margin-left: 20px;">
+                    <Link to="{$_('page.url.nav.game')}/{$_(`page.url.games.${jogo.url}`)}/{$_('page.url.nav.rules')}" state={jogo} >{$_(`page.buttons.rules`)}</Link>
+                </div>
             </div>
         </div>
-
     </div>
 </div>

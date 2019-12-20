@@ -8,14 +8,17 @@
     import { _ } from 'svelte-i18n';
 
 
+    
+
+
 
 </script>
 
 <div class="container-fluid">
-    <Route path="jogos" component="{Jogos}" />
-    <Route path="jogo/:nome" component="{JogosInfo}"  />
-    <Route path="jogo/:nome/regras" component="{JogoRegras}" />
-    <Route path="sobre" component="{Sobre}" />
+    <Route path="{$_('page.url.nav.games')}" component="{Jogos}" />
+    <Route path="{$_('page.url.nav.game')}/:nome" component="{JogosInfo}"  />
+    <Route path="{$_('page.url.nav.game')}/:nome/{$_('page.url.nav.rules')}" component="{JogoRegras}" />
+    <Route path="{$_('page.url.nav.about')}" component="{Sobre}" />
     <Route path="/" component="{Home}" />
 </div>
 <!--    {$_('page.jogos.title')}-->

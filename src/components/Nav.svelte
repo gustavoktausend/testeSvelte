@@ -10,7 +10,7 @@
         font-weight: 300;
         padding: 0 1em;
         background: linear-gradient(135deg, #009dd6 0%,#00cfea 100%);
-        height: 48px;
+        height: 58px;
         margin: 0px auto;
 	}
 
@@ -70,9 +70,9 @@
 <!--			<li><Link to="/">{$_('page.nav.home')}</Link></li>-->
 <!--			<li><Link to="sobre">{$_('page.nav.about')}</Link> </li>-->
 <!--			<li><Link to="jogos">{$_('page.nav.games')}</Link></li>-->
+			<li><a href="/{$_('page.url.nav.games')}" use:link>{$_('page.nav.games')}</a> </li>
+			<li><a href="{$_('page.url.nav.about')}" use:link>{$_('page.nav.about')}</a> </li>
 			<li><a href="/" use:link>{$_('page.nav.home')}</a> </li>
-			<li><a href="sobre" use:link>{$_('page.nav.about')}</a> </li>
-			<li><a href="/jogos" use:link>{$_('page.nav.games')}</a> </li>
 			<!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
 				the blog data when we hover over the link or tap it on a touchscreen -->
 		</ul>

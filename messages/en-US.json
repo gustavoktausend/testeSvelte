@@ -30,15 +30,15 @@
 			"jogo": {
 			"buraco": {
 					"title": "Game rules Buraco",
-					"description": "<h2>Descriptions</h2> <p>The game is played with 4 participants, forming duos, sitting in alternate positions on the table.</p>"
+					"description": "<h2>Descriptions</h2> <p>The game is played with 4 participants, forming duos, sitting in alternate positions on the table.</p><ul><li>Players - 4</li><li>Deck of Cards - two traditional 52 cards deck</li><li>Distribution - 11 cards for each participant and 2 extra hands</li><li>Objective - Score more than the opponents</li></ul>"
 				},
 				"tranca": {
 					"title": "Game rules Tranca",
-					"description": "<h2>Descriptions</h2> <p>The game is played with 4 participants, forming duos, sitting in alternate positions on the table.</p>"
+					"description": "<h2>Descriptions</h2> <p>The game is played with 4 participants, forming duos, sitting in alternate positions on the table.</p> <ul><li>Players - 4.</li><li>Decks - two 52 cards pack.</li><li>Distribution - eleven cards each participant and two 11 cards extra piles.</li><li>Objective - Score more points.</li></ul>"
 				},
 				"truco": {
 					"title": "Game rules Truco",
-					"description": "<h2>Descriptions</h2> <p>The game is played with 4 participants, forming duos, sitting in alternate positions on the table.</p>"
+					"description": "<h2>Descriptions</h2> <p>The game is played with 4 participants, forming duos, sitting in alternate positions on the table.</p> <ul><li>Players - 4.</li><li>Deck of Cards - a traditional (or spanish) pack, without Jokers, 8's, 9's or 10's.</li><li>Distribution - 3 cards each participant.</li><li>Objective - score 12 points.</li></ul>"
 				}	
 			}
 		},
@@ -46,9 +46,18 @@
 			"title": "Last Champions"
 		},
 		"url": {
-			"buraco": "buraco-ingles",
-			"tranca": "tranca-ingles",
-			"truco": "truco-ingles"
+			"nav": {
+				"home": "home",
+				"games": "games",
+				"game": "game",
+				"about": "about",
+				"rules": "rules"
+			},
+			"games": {
+				"buraco": "buraco-ingles",
+				"tranca": "tranca-ingles",
+				"truco": "truco-ingles"
+			}
 		},
 		"buttons": {
 			"play": "Play",

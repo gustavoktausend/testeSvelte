@@ -28,17 +28,17 @@
 		},
 		"regras": {
 			"jogo": {
-			"buraco": {
+				"buraco": {
 					"title": "Regras do Jogo Buraco (Canastra)  ",
-					"description": "<h2>Descrição</h2> <p>O jogo é jogado com quatro participantes, formando duas duplas, devendo estar sentadas na mesa em posições alternadas.</p>"
+					"description": "<h2>Descrição</h2> <p>O jogo é jogado com quatro participantes, formando duas duplas, devendo estar sentadas na mesa em posições alternadas.</p><ul><li>Jogadores - 4</li><li>Baralhos - dois tradicionais de 52 cartas</li><li>Distribuição - 11 cartas para cada participante e dois mortos</li><li>Objetivo - Fazer mais pontos que a dupla oponente</li></ul>"
 				},
 				"tranca": {
 					"title": "Regras do Jogo Tranca",
-					"description": "<h2>Descrição</h2> <p>O jogo é jogado com 4 participantes formando duas duplas situadas em posições alternadas.</p>"
+					"description": "<h2>Descrição</h2> <p>O jogo é jogado com 4 participantes formando duas duplas situadas em posições alternadas.</p><ul><li>Jogadores - 4.</li><li>Baralhos - dois de 52 cartas.</li><li>Distribuição - onze cartas para cada participante e dois mortos de 11 cartas.</li><li>Objetivo - Fazer mais pontos.</li></ul>"
 				},
 				"truco": {
 					"title": "Regras do Jogo Truco",
-					"description": "<h2>Descrição</h2> <p>O jogo tem quatro participantes, que formam duas duplas, devendo sentar em posições alternadas.</p>"
+					"description": "<h2>Descrição</h2> <p>O jogo tem quatro participantes, que formam duas duplas, devendo sentar em posições alternadas.</p> <ul><li>Jogadores - 4.</li><li>Baralhos - um baralho, sendo que o curinga e as cartas 8, 9, e 10 não são utilizadas.</li><li>Distribuição - três cartas para cada participante.</li><li>Objetivo - fazer 12 pontos.</li></ul>"
 				}	
 			}
 		},
@@ -46,9 +46,18 @@
 			"title": "Últimos Campeões"
 		},
 		"url": {
-			"buraco": "buraco-portugues",
-			"tranca": "tranca-portugues",
-			"truco": "truco-portugues"
+			"nav": {
+				"home": "inicio",
+				"games": "jogos",
+				"game": "jogo",
+				"about": "sobre",
+				"rules": "regras"
+			},
+			"games": {
+				"buraco": "buraco-portugues",
+				"tranca": "tranca-portugues",
+				"truco": "truco-portugues"
+			}
 		},
 		"buttons": {
 			"play": "Jogar",

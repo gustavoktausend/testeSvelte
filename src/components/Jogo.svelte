@@ -57,7 +57,7 @@
             <img class="game-logo" src="{jogo.imagem}" alt="{jogo.nome}">
         </div>
         <div class="card-footer">
-            <Link to="jogo/{$_(`page.url.${jogo.url}`)}" state={jogo} >{jogo.url}</Link>
+            <Link to="{$_('page.url.nav.game')}/{$_(`page.url.games.${jogo.url}`)}" state={jogo} >{jogo.url}</Link>
         </div>
     </div>
 </div>
