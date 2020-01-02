@@ -7,7 +7,6 @@
     import JogoRegras from "./pages/JogoRegras.svelte";
     import { _ } from 'svelte-i18n';
 
-
     import pt_BR from '../../messages/pt-BR';
     import en_US from '../../messages/en-US';
     let bundles = [pt_BR.page.url, en_US.page.url];

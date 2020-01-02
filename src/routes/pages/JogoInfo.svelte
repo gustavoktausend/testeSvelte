@@ -1,9 +1,26 @@
 <script>
-    export let nome;
     export let location;
     export let jogo = location.state;
     import { Link } from "svelte-routing";
-    import { _ } from 'svelte-i18n'
+    import { _, locale, locales } from 'svelte-i18n';
+    import axios from "axios";
+
+    const getInfoByJogoId = async (id, locale) => {
+        try {
+            const response =
+                    locale === 'pt-BR' ?
+                            await axios.get(`http://localhost:8082/jogo/${id+locale}`):
+                            locale === 'en-US' ? await axios.get(`http://localhost:8082/jogo/${id+locale}`):
+                                    await axios.get(`http://localhost:8082/jogo/${id+locale}`);
+            return response.data;
+        } catch (e) {
+            console.error(e);
+        }
+    }
+
+    // Comportamento do Svelte, ao ser alterado o estado, variavel é atualizada e redenrizada novamente
+    $: jogoBundle = getInfoByJogoId(jogo.id, $locale);
+
 </script>
 
 <style>
@@ -79,16 +96,29 @@
             <img class="img-responsive" src="{jogo.imagem}" alt="{jogo.nome}">
         </div>
         <div class="col-md-9">
-            <h1>{$_(`page.jogos.jogo.${jogo.url}.title`)}</h1>
-
-            <div class='content'>
-                {@html $_(`page.jogos.jogo.${jogo.url}.description`)}
-            </div>
+            {#await jogoBundle then value}
+                <h2>
+                    {@html value.about_title }
+                </h2>
+            {/await}
 
             <div style="margin: 20px 0;">
                 <a class="button-mj" href="/jogar">{$_(`page.buttons.play`)}</a>
                 <div class="button-mj" style="margin-left: 20px;">
                     <Link to="{$_('page.url.nav.game')}/{$_(`page.url.games.${jogo.url}`)}/{$_('page.url.nav.rules')}" state={jogo} >{$_(`page.buttons.rules`)}</Link>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin: 40px 0">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <div class="content" >
+                        {#await jogoBundle then value}
+                            {@html value.about_text }
+                        {/await}
+                    </div>
                 </div>
             </div>
         </div>

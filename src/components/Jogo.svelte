@@ -18,6 +18,7 @@
         border-top-left-radius: 12px;
         border-top-right-radius: 12px;
     }
+
     .card-footer{
         text-align: center;
         font-size: 14px;
@@ -25,7 +26,10 @@
 
     .card {
         border-radius: 12px;
+        margin: 5px;
+        min-height: 200px;
     }
+
     .countOnline{
         position: absolute;
         left: 78%;
@@ -34,6 +38,7 @@
         font-size: 15px;
         font-weight: bold;
     }
+
     .game-logo {
         display: block;
         margin: auto;
@@ -42,7 +47,9 @@
         -webkit-filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.25));
         filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.25));
     }
+
 </style>
+<!--"https://cdn.megajogos.com.br/images/premium/game-logo/buraco-m_pt_BR.png-->
 
 <div class="col-md-4">
     <div id="{jogo.id}" class="card">

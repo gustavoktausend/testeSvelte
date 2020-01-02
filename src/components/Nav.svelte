@@ -1,6 +1,24 @@
 <script>
-    import { link } from "svelte-routing";
-    import { _ } from 'svelte-i18n'
+	import {onMount} from "svelte";
+	import {link} from "svelte-routing";
+	import {_, locale} from 'svelte-i18n'
+	import Locales from './Locale.svelte'
+	import axios from "axios";
+
+	const getNavByLocale = async (locale) => {
+		try {
+			const response =
+					locale === 'pt-BR' ?
+							await axios.get(`http://localhost:8082/navegation/${locale}`):
+							locale === 'en-US' ? await axios.get(`http://localhost:8082/navegation/${locale}`):
+									await axios.get(`http://localhost:8082/navegation/${locale}`);
+			return response.data;
+		} catch (e) {
+			console.error(e);
+		}
+	}
+
+	$: navBundle = getNavByLocale($locale);
 
 </script>
 
@@ -53,10 +71,10 @@
 	}
 
 	a {
-		text-decoration: none;
+		text-decoration: none !important;
 		padding: 1em 0.5em;
 		display: block;
-		color: #f0f0f0;
+		color: #f0f0f0 !important;
 		font-weight: bold;
 	}
 </style>
@@ -67,14 +85,13 @@
 			<img src="https://cdn.megajogos.com.br/images/logo_top_01_pt_BR.png" alt="logo ">
 		</div>
 		<ul>
-<!--			<li><Link to="/">{$_('page.nav.home')}</Link></li>-->
-<!--			<li><Link to="sobre">{$_('page.nav.about')}</Link> </li>-->
-<!--			<li><Link to="jogos">{$_('page.nav.games')}</Link></li>-->
-			<li><a href="/{$_('page.url.nav.games')}" use:link>{$_('page.nav.games')}</a> </li>
-			<li><a href="{$_('page.url.nav.about')}" use:link>{$_('page.nav.about')}</a> </li>
-			<li><a href="/" use:link>{$_('page.nav.home')}</a> </li>
-			<!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
-				the blog data when we hover over the link or tap it on a touchscreen -->
+			<li><Locales/></li>
+			{#await navBundle then value}
+				<li><a href="/{value.help.toLowerCase()}" use:link>{value.help}</a></li>
+				<li><a href="/{value.blog.toLowerCase()}" use:link>{value.blog}</a></li>
+				<li><a href="/{value.about.toLowerCase()}" use:link>{value.about}</a></li>
+				<li><a href="/" use:link>{value.home}</a> </li>
+			{/await}
 		</ul>
 	</div>
 </nav>

@@ -2,7 +2,7 @@
 
 const jogos = [
     {   
-        id: 1,
+        id: "buraco_",
         nome: "Buraco - Canastra",
         url: "buraco",
         page_title: "Buraco - Canastra Online | MegaJogos",
@@ -12,7 +12,7 @@ const jogos = [
         corDeFundo: "#ffbb76"
     },
     {   
-        id: 2,
+        id: "truco_",
         nome: "Truco",
         url: "truco",
         page_title: "Jogo de TRUCO Online grátis e sem cadastro | MegaJogos",
@@ -22,7 +22,7 @@ const jogos = [
         corDeFundo: "#e59ea7"
     },
     {   
-        id: 3,
+        id: "tranca_",
         nome: "Tranca",
         url: "tranca",
         page_title: "Tranca Online | MegaJogos",
