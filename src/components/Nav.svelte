@@ -1,5 +1,4 @@
 <script>
-	import {onMount} from "svelte";
 	import {link} from "svelte-routing";
 	import {_, locale} from 'svelte-i18n'
 	import Locales from './Locale.svelte'
@@ -17,6 +16,13 @@
 			console.error(e);
 		}
 	}
+
+	const getIconLocale = locale =>
+			locale === 'pt-BR' ? 'pt_BR'
+					: locale === 'en-US' ? 'en_US'
+					: 'pt_BR';
+
+	$: iconLocale = getIconLocale($locale);
 
 	$: navBundle = getNavByLocale($locale);
 
@@ -82,7 +88,7 @@
 <nav>
     <div class="container" style="padding: 0;">
 		<div class="logo">
-			<img src="https://cdn.megajogos.com.br/images/logo_top_01_pt_BR.png" alt="logo ">
+			<img src="https://cdn.megajogos.com.br/images/logo_top_01_{iconLocale}.png" alt="logo ">
 		</div>
 		<ul>
 			<li><Locales/></li>

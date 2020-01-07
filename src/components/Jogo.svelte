@@ -53,7 +53,7 @@
 
 <div class="col-md-4">
     <div id="{jogo.id}" class="card">
-        <div class="card-body" style="background-color:{jogo.corDeFundo}">
+        <div class="card-body" style="background-color:{jogo.game_color}; background-image: url('https://cdn.megajogos.com.br/images/game/bg_grid_${jogo.category.toLowerCase()}.png')">
             <span class="countOnline">
                 {#await getCountOnline()}
                     Carregando....
@@ -61,7 +61,7 @@
                     {data}
                 {/await}
             </span>
-            <img class="game-logo" src="{jogo.imagem}" alt="{jogo.nome}">
+            <img class="game-logo" src="https://cdn.megajogos.com.br/images/premium/game-logo/{jogo.image}" alt="{jogo.game_name}">
         </div>
         <div class="card-footer">
             <Link to="{$_('page.url.nav.game')}/{$_(`page.url.games.${jogo.url}`)}" state={jogo} >{jogo.url}</Link>

@@ -36,11 +36,9 @@
             <img class="img-responsive" src="{jogo.imagem}" alt="{jogo.nome}">
         </div>
         <div class="col-md-9">
-            <h1>{$_(`page.jogos.jogo.${jogo.url}.title`)}</h1>
-
-            <div class='content'>
-                {@html $_(`page.jogos.jogo.${jogo.url}.description`)}
-            </div>
+            {#await jogoBundle then value}
+                <h1>{@html value.rules_title} </h1>
+            {/await}
         </div>
     </div>
     <div class="row" style="margin: 40px 0">
