@@ -6,6 +6,7 @@
         const res = await fetch(`https://www.megajogos.com.br/ajax/site_counter.jsp?1576186596292`);
         return await res.json();
     }
+    console.log(jogo)
 
 </script>
 
@@ -64,7 +65,7 @@
             <img class="game-logo" src="https://cdn.megajogos.com.br/images/premium/game-logo/{jogo.image}" alt="{jogo.game_name}">
         </div>
         <div class="card-footer">
-            <Link to="{$_('page.url.nav.game')}/{$_(`page.url.games.${jogo.url}`)}" state={jogo} >{jogo.url}</Link>
+            <Link to="{$_(`page.url.games.${jogo.url}`)}" state={jogo} >{jogo.url}</Link>
         </div>
     </div>
 </div>

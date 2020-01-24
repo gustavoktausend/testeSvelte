@@ -13,7 +13,7 @@
 		} catch (e) {
 			console.error(e);
 		}
-	}
+	};
 
 	$: meta = getUtil($locale);
 
@@ -29,7 +29,7 @@
 	{/await}
 </svelte:head>
 
-<Router url="{url}">
+<Router>
 	<Nav />
 	<MJRoutes />
 </Router>

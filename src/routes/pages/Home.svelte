@@ -1,20 +1,27 @@
 <script >
     import { onMount, onDestroy } from "svelte"
-    import Jogo from "../../components/Jogo.svelte"
+    import Jogo from "../../components/Jogo.svelte";
     import axios from "axios";
 
-    // export let jogos = [];
-    import jogos from './_jogos.js';
+    const getAllGames = async() => {
+        try {
+            const response = await axios.get(`https://interno.fontec.inf.br/do/GameTypeAction`);
+            return response.data;
+        } catch (e) {
+            console.error(e);
+        }
+    };
+
 </script>
 <div class="container">
     <div class="row">
         <div class="col-md-10">
             <br/>
             <div class="row">
-                {#await jogos}
+                {#await getAllGames()}
                     <p>...waiting</p>
                 {:then data}
-                    {#each jogos as jogo, i}
+                    {#each data.games as jogo, i}
                         <Jogo {jogo} />
                     {/each}
                 {:catch error}

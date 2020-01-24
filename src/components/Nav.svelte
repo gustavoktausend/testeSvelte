@@ -6,16 +6,12 @@
 
 	const getNavByLocale = async (locale) => {
 		try {
-			const response =
-					locale === 'pt-BR' ?
-							await axios.get(`http://localhost:8082/navegation/${locale}`):
-							locale === 'en-US' ? await axios.get(`http://localhost:8082/navegation/${locale}`):
-									await axios.get(`http://localhost:8082/navegation/${locale}`);
+			const response = await axios.get(`http://localhost:8082/navegation/${locale}`);
 			return response.data;
 		} catch (e) {
 			console.error(e);
 		}
-	}
+	};
 
 	const getIconLocale = locale =>
 			locale === 'pt-BR' ? 'pt_BR'
