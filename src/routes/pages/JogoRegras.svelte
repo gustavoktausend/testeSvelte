@@ -15,25 +15,27 @@
         } catch (e) {
             console.error(e);
         }
-    }
+    };
 
-    $: jogoBundle = getInfoByJogoId(jogo.id, $locale)
+    $: jogoBundle = getInfoByJogoId(jogo.id, $locale);
 
 
 </script>
 
 <svelte:head>
-    <title>{$_(`page.regras.jogo.${jogo.url}.title`)}</title>
-    <meta name="description" content="{$_(`page.jogos.jogo.${jogo.url}.description`)}">
-    <meta name="keywords" content="jogos, cartas, tabuleiro">
-    <meta name="author" content="Gustavo Kring">
+    {#await jogoBundle then value}
+        <title>{value.rules_title}</title>
+        <meta name="description" content="{value.description_meta}">
+        <meta name="keywords" content="jogos, cartas, tabuleiro">
+        <meta name="author" content="Gustavo Kring">
+    {/await}}
 </svelte:head>
 
 <div class="container">
     <br>
     <div class="row" style="margin: 40px 0">
         <div class="col-md-3">
-            <img class="img-responsive" src="{jogo.imagem}" alt="{jogo.nome}">
+            <img class="img-responsive" src="https://cdn.megajogos.com.br/images/premium/game-logo/{jogo.image}" alt="{jogo.nome}">
         </div>
         <div class="col-md-9">
             {#await jogoBundle then value}

@@ -6,7 +6,6 @@
         const res = await fetch(`https://www.megajogos.com.br/ajax/site_counter.jsp?1576186596292`);
         return await res.json();
     }
-    console.log(jogo)
 
 </script>
 
@@ -54,7 +53,7 @@
 
 <div class="col-md-4">
     <div id="{jogo.id}" class="card">
-        <div class="card-body" style="background-color:{jogo.game_color}; background-image: url('https://cdn.megajogos.com.br/images/game/bg_grid_${jogo.category.toLowerCase()}.png')">
+        <div class="card-body" style="background-color:{jogo.game_color}; background-image: url('https://cdn.megajogos.com.br/images/game/bg_grid_{jogo.category.toLowerCase()}.png')">
             <span class="countOnline">
                 {#await getCountOnline()}
                     Carregando....
@@ -65,7 +64,7 @@
             <img class="game-logo" src="https://cdn.megajogos.com.br/images/premium/game-logo/{jogo.image}" alt="{jogo.game_name}">
         </div>
         <div class="card-footer">
-            <Link to="{$_(`page.url.games.${jogo.url}`)}" state={jogo} >{jogo.url}</Link>
+            <Link to="{jogo.url}" state={jogo} >{jogo.url}</Link>
         </div>
     </div>
 </div>

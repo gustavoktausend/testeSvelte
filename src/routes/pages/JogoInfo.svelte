@@ -7,31 +7,30 @@
 
     const getInfoByJogoId = async (id, locale) => {
         try {
-            const response =
-                    locale === 'pt-BR' ?
-                            await axios.get(`http://localhost:8082/jogo/${id+locale}`):
-                            locale === 'en-US' ? await axios.get(`http://localhost:8082/jogo/${id+locale}`):
-                                    await axios.get(`http://localhost:8082/jogo/${id+locale}`);
+            const response = await axios.get(`http://localhost:8082/jogo/${id+locale}`);
             return response.data;
         } catch (e) {
             console.error(e);
         }
-    }
+    };
+
+    const getUtils = async (locale) => {
+        try {
+            const response = await axios.get(`http://localhost:8082/util/${locale}`);
+            return response.data;
+        } catch (e) {
+            console.log(e);
+        }
+    };
 
     // Comportamento do Svelte, ao ser alterado o estado, variavel é atualizada e redenrizada novamente
+    // Locale Triggers
     $: jogoBundle = getInfoByJogoId(jogo.id, $locale);
+    $: utilsBundle = getUtils($locale);
 
 </script>
 
 <style>
-    /*
-        By default, CSS is locally scoped to the component,
-        and any unused styles are dead-code-eliminated.
-        In this page, Svelte can't know which elements are
-        going to appear inside the {{{post.html}}} block,
-        so we have to use the :global(...) modifier to target
-        all elements inside .content
-    */
     .content :global(h2) {
         font-size: 1.4em;
         font-weight: 500;
@@ -83,17 +82,19 @@
 </style>
 
 <svelte:head>
-    <title>{$_(`page.jogos.jogo.${jogo.url}.title`)}</title>
-    <meta name="description" content="{$_(`page.jogos.jogo.${jogo.url}.description`)}">
-    <meta name="keywords" content="jogos, cartas, tabuleiro">
-    <meta name="author" content="Gustavo Kring">
+    {#await jogoBundle then value}
+<!--        <title>{jogo.nome}</title>-->
+        <meta name="description" content="{value.description_meta}">
+        <meta name="keywords" content="jogos, cartas, tabuleiro">
+        <meta name="author" content="Gustavo Kring">
+    {/await}}
 </svelte:head>
 
 
 <div class="container">
     <div class="row" style="margin: 40px 0">
         <div class="col-md-3">
-            <img class="img-responsive" src="{jogo.imagem}" alt="{jogo.nome}">
+            <img class="img-responsive" src="https://cdn.megajogos.com.br/images/premium/game-logo/{jogo.image}" alt="{jogo.nome}">
         </div>
         <div class="col-md-9">
             {#await jogoBundle then value}
@@ -103,10 +104,12 @@
             {/await}
 
             <div style="margin: 20px 0;">
-                <a class="button-mj" href="/jogar">{$_(`page.buttons.play`)}</a>
-                <div class="button-mj" style="margin-left: 20px;">
-                    <Link to="{$_('page.url.nav.game')}/{$_(`page.url.games.${jogo.url}`)}/{$_('page.url.nav.rules')}" state={jogo} >{$_(`page.buttons.rules`)}</Link>
-                </div>
+                {#await utilsBundle then value}
+                    <a class="button-mj" href="/jogar">{value.play_button}</a>
+                    <div class="button-mj" style="margin-left: 20px;">
+                        <Link to="{jogo.url}/{value.rules_button.toLowerCase()}" state={jogo} >{value.rules_button}</Link>
+                    </div>
+                {/await}
             </div>
         </div>
     </div>

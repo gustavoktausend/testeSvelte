@@ -21,5 +21,3 @@
 
     {/each}
 </div>
-<!--    {$_('page.jogos.title')}-->
-<!--to="/{$_(`page.url.${jogo.nome}`)}"-->
