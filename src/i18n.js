@@ -2,11 +2,8 @@
 // adding dicionary off messages => SYNCHRONOUS 
 import { addMessages } from 'svelte-i18n';
 
-import enUS from '../messages/en-US.json';
-import pt from '../messages/pt-BR.json';
-
-addMessages('en-US', enUS);
-addMessages('pt-BR', pt);
+addMessages('en-US');
+addMessages('pt-BR');
 
 import { init } from 'svelte-i18n';
 

@@ -5,19 +5,27 @@
     import JogosInfo from "./pages/JogoInfo.svelte";
     import JogoRegras from "./pages/JogoRegras.svelte";
     import { _, locale } from 'svelte-i18n';
+    import axios from "axios";
 
-    import pt_BR from '../../messages/pt-BR';
-    import en_US from '../../messages/en-US';
-    let bundles = [pt_BR.page.url, en_US.page.url];
+    const getNavRoutes = async (locale) => {
+        try {
+            const response = await axios.get(`http://localhost:8082/navegation/${locale}`);
+            return response.data;
+        } catch (e) {
+            console.error(e);
+        }
+    };
+
+    $: navBundle = getNavRoutes($locale);
 
 </script>
 
 <div class="container-fluid">
     <Route path="/" component="{Home}" />
-    {#each bundles as bundle}
+    {#await navBundle then value}
         <Route path="/:nome" component="{JogosInfo}"  />
-        <Route path="/:nome/{bundle.nav.rules}" component="{JogoRegras}" />
-        <Route path="{bundle.nav.about}" component="{Sobre}" />
+        <Route path="/:nome/{value.rules}" component="{JogoRegras}" />
+        <Route path="{value.about.toLowerCase()}" component="{Sobre}" />
 
-    {/each}
+    {/await}
 </div>
