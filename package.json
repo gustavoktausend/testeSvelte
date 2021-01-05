@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@rollup/plugin-json": "^4.0.0",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "sirv-cli": "^0.4.4",
     "svelte-i18n": "^2.1.1",
     "svelte-routing": "^1.4.0"
